@@ -21,3 +21,10 @@
 * In the *src/components* folder create the *book-list.js* file. This will be rendering the list of books, provided as a props item to it, *this.props.books*.
 * Using the *map* function on the props item *books*, a *renderList()* function is created and supplied to render.
 * A container is a React component that has a direct connection to the state managed by Redux. The *BookList* component will be connected to state, so it is being promoted to a container. Create the *src/containers* folder and move *book-list.js* into it.
+
+## 004 Implement a container class
+* Import the *BookList* container from *'../containers/book-list'* into the application in *src/components/app.js*.
+* Return the *BookList* tag in the default app render.
+* Inside *src/containers/book-list.js* import the *connect* property from *'react-redux'*.
+* The *mapStateToProps* function takes the application state as an argument and returns an object that declares what can be mapped as props to the connected view. In this case it takes the *state.books* and maps it to a *books* property.
+* The file is now set to export by default the state container, which is the product of the connection between the return of *mapStateToProps* and the *BookList* component. 
