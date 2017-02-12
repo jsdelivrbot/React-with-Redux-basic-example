@@ -27,4 +27,14 @@
 * Return the *BookList* tag in the default app render.
 * Inside *src/containers/book-list.js* import the *connect* property from *'react-redux'*.
 * The *mapStateToProps* function takes the application state as an argument and returns an object that declares what can be mapped as props to the connected view. In this case it takes the *state.books* and maps it to a *books* property.
-* The file is now set to export by default the state container, which is the product of the connection between the return of *mapStateToProps* and the *BookList* component. 
+* The file is now set to export by default the state container, which is the product of the connection between the return of *mapStateToProps* and the *BookList* component.
+
+## 005 Binding action creators to container props
+* Action creators are functions that create the action objects. Action objects contain a *type* property that describes the action. When an action is created, it is sent to all the reducers in the application. If a reducer has a switch case with a matching action type, then the reducer will return the matching value for the relevant application state. The new state is mapped to all containers and the containers rerender with new props.
+* In *src/actions/index.js* create the *selectBook* action creator. It takes a *book* object as an argument. For the time being it will console log the *book.title*.
+* This action has to be called whenever a user clicks on a book in the list. It also has to be dispatched to all the reducers. So it has to be wired up to Redux. This will be done by binding the *selectBook* action to the *BookList* component.
+* Inside *src/containers/book-list.js* import the *selectBook* property from *'../actions/index'*.
+* Import the *bindActionCreators* function from *'redux'*. This is the function that dispatches the action to all the reducers.
+* Create the *mapDispatchToProps* function which takes the *dispatch* object as an argument and returns the *bindActionCreators* function.
+* The *bindActionCreators* function takes the *{selectBook: selectBook}* object as its first argument and the *dispatch* object as its second argument and binds them together.
+* In the exported container, *mapDispatchToProps* is also being connected to the *BookList* component. Now both the returns of *mapStateToProps* and *mapDispatchToProps* are available as props in *BookList*.
