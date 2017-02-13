@@ -38,3 +38,9 @@
 * Create the *mapDispatchToProps* function which takes the *dispatch* object as an argument and returns the *bindActionCreators* function.
 * The *bindActionCreators* function takes the *{selectBook: selectBook}* object as its first argument and the *dispatch* object as its second argument and binds them together.
 * In the exported container, *mapDispatchToProps* is also being connected to the *BookList* component. Now both the returns of *mapStateToProps* and *mapDispatchToProps* are available as props in *BookList*.
+
+## 006 Create an action
+* Now *BookList* should be able to call the *selectBook* action creator.
+* Create a click event handler in the *li* item of *BookList*. On click, a callback function calls the available property function *selectBook()* with *book* as an argument.
+* The click handler operates as expected, the relevant console messages appear on clicks, along with error messages stating that actions must be plain objects.
+* The action object has to contain a *type* and a *payload* so in *src/actions/index.js* the *selectBook* action creator is edited accordingly. The type value is set to *'BOOK_SELECTED'* and the payload value to *book*.
