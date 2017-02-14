@@ -44,3 +44,9 @@
 * Create a click event handler in the *li* item of *BookList*. On click, a callback function calls the available property function *selectBook()* with *book* as an argument.
 * The click handler operates as expected, the relevant console messages appear on clicks, along with error messages stating that actions must be plain objects.
 * The action object has to contain a *type* and a *payload* so in *src/actions/index.js* the *selectBook* action creator is edited accordingly. The type value is set to *'BOOK_SELECTED'* and the payload value to *book*.
+
+## 007 Consume the created action in the relevant reducer
+* Inside the *src/reducers* folder create the *reducer_active_book.js* file. This reducer will contain the relevant switch case for the *'BOOK_SELECTED'* action type and return the relevant payload to the application state when the case is matched.
+* Reducers get two arguments, *state* and *action*. The initial state is assigned to *null* so that Redux does not produce an *undefined* error.
+* In *src/reducers/index.js* import *ActiveBookReducer* from *'./reducer_active_book'*.
+* Add the line *activeBook: ActiveBookReducer* inside the *combineReducers* function's argument object. This way the state *activeBook* is being mapped to the product of the *ActiveBookReducer* reducer.
