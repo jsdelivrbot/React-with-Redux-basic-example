@@ -50,3 +50,8 @@
 * Reducers get two arguments, *state* and *action*. The initial state is assigned to *null* so that Redux does not produce an *undefined* error.
 * In *src/reducers/index.js* import *ActiveBookReducer* from *'./reducer_active_book'*.
 * Add the line *activeBook: ActiveBookReducer* inside the *combineReducers* function's argument object. This way the state *activeBook* is being mapped to the product of the *ActiveBookReducer* reducer.
+
+## 008 Create the *book-detail* container
+* In the *src/containers* folder create the *book-detail.js* file. This will contain the *BookDetail* component which be rendering the details of the selected book, which will be passed to it as properties via the *activeBook* state. To start with and for testing purposes it shall return just a static element.
+* In *src/components/app.js* import *BookDetail* from *'../containers/book-detail'*.
+* Return the *BookDetail* tag in the default app render.
