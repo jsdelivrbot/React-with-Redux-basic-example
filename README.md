@@ -55,3 +55,10 @@
 * In the *src/containers* folder create the *book-detail.js* file. This will contain the *BookDetail* component which be rendering the details of the selected book, which will be passed to it as properties via the *activeBook* state. To start with and for testing purposes it shall return just a static element.
 * In *src/components/app.js* import *BookDetail* from *'../containers/book-detail'*.
 * Return the *BookDetail* tag in the default app render.
+
+## 009 Connect the *BookDetail* container to the *activeBook* state
+* Now the *BookDetail* smart component has to be hooked to the Redux store.
+* Inside *src/containers/book-detail.js* import the *connect* property from *'react-redux'*.
+* Add the *mapStateToProps* function, which takes the *state.activeBook* and maps it to the *book* property.
+* The file is now set to export by default the state container, which is the product of the connection between the return of *mapStateToProps* and the *BookDetail* component.
+* When a book in the list is clicked, the book details are now available in *BookDetail* via *this.props.book*.
