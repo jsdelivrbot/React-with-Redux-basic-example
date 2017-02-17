@@ -62,3 +62,7 @@
 * Add the *mapStateToProps* function, which takes the *state.activeBook* and maps it to the *book* property.
 * The file is now set to export by default the state container, which is the product of the connection between the return of *mapStateToProps* and the *BookDetail* component.
 * When a book in the list is clicked, the book details are now available in *BookDetail* via *this.props.book*.
+
+## 010 Render the book details
+* Now the *BookDetail* smart component is able to render the book details, such as *this.props.book.title* and *this.props.book.pages*, so it is edited to do so.
+* At initialization, the *activeBook* state is null, so a conditional check needs to be applied in order to avoid a *read property of null* error. When *this.props.book* is null, an early return with a message such as *Select a book* is provided.
