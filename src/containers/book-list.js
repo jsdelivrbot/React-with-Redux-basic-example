@@ -10,7 +10,7 @@ class BookList extends Component {
                 <li
                     key={book.title}
                     onClick={() => this.props.selectBook(book)}
-                    className="list-group-item">
+                    className="list-item list-group-item">
                     {book.title}
                 </li>
             );
@@ -20,6 +20,7 @@ class BookList extends Component {
     render() {
         return (
             <ul className="list-group col-sm-4">
+                <li id="list-header" className="list-group-item">Available Books</li>
                 {this.renderList()}
             </ul>
         );
